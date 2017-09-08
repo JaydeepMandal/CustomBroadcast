@@ -17,13 +17,13 @@
             </intent-filter>
         </activity>
 
-        <receiver android:name=".MyBroadcastRecever">
+       <!-- <receiver android:name=".MyBroadcastRecever">
             <intent-filter>
                 <action android:name="android.intent.action.AIRPLANE_MODE"></action>
                 <action android:name="android.intent.action.BATTERY_LOW"></action>
                 <action android:name="com.example.ee.custombroadcast.CUSTOM_BROADCAST"></action>
             </intent-filter>
-        </receiver>
+        </receiver>-->
     </application>
 
 </manifest>

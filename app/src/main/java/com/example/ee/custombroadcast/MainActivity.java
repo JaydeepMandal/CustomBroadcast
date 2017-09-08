@@ -12,18 +12,18 @@ public class MainActivity extends AppCompatActivity {
 
     static final String CUSTOM_BROADCAST = "com.example.ee.custombroadcast.CUSTOM_BROADCAST";
 
-    /*BroadcastReceiver receiver = new MyBroadcastRecever();*/
+    BroadcastReceiver receiver = new MyBroadcastRecever();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-       /* IntentFilter filter = new IntentFilter();
+        IntentFilter filter = new IntentFilter();
         filter.addAction(Intent.ACTION_AIRPLANE_MODE_CHANGED);
         filter.addAction(Intent.ACTION_BATTERY_LOW);
         filter.addAction(CUSTOM_BROADCAST);
-        registerReceiver(receiver,filter);*/
+        registerReceiver(receiver,filter);
 
     }
 
@@ -32,11 +32,11 @@ public class MainActivity extends AppCompatActivity {
         sendBroadcast(intent);
     }
 
-   /* @Override
+    @Override
     protected void onDestroy() {
         unregisterReceiver(receiver);
         super.onDestroy();
-    }*/
+    }
 
 
 }
