@@ -3,6 +3,7 @@ package com.example.ee.custombroadcast;
 import android.content.BroadcastReceiver;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -20,21 +21,21 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         IntentFilter filter = new IntentFilter();
-        filter.addAction(Intent.ACTION_AIRPLANE_MODE_CHANGED);
-        filter.addAction(Intent.ACTION_BATTERY_LOW);
+       /* filter.addAction(Intent.ACTION_AIRPLANE_MODE_CHANGED);
+        filter.addAction(Intent.ACTION_BATTERY_LOW);*/
         filter.addAction(CUSTOM_BROADCAST);
-        registerReceiver(receiver,filter);
+        LocalBroadcastManager.getInstance(this).registerReceiver(receiver,filter);
 
     }
 
     public void sendBroadcast(View v){
         Intent intent = new Intent(CUSTOM_BROADCAST);
-        sendBroadcast(intent);
+        LocalBroadcastManager.getInstance(this).sendBroadcast(intent);
     }
 
     @Override
     protected void onDestroy() {
-        unregisterReceiver(receiver);
+        LocalBroadcastManager.getInstance(this).unregisterReceiver(receiver);
         super.onDestroy();
     }
 

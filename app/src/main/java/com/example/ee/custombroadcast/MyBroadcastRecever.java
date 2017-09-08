@@ -11,12 +11,12 @@ public class MyBroadcastRecever extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         String intentAction = intent.getAction();
         switch (intentAction){
-            case Intent.ACTION_AIRPLANE_MODE_CHANGED:
+           /* case Intent.ACTION_AIRPLANE_MODE_CHANGED:
                 Toast.makeText(context, "AIRPLANE MODE", Toast.LENGTH_SHORT).show();
                 break;
             case Intent.ACTION_BATTERY_LOW:
                 Toast.makeText(context, "BATTERY LOW", Toast.LENGTH_SHORT).show();
-                break;
+                break;*/
             case CUSTOM_BROADCAST :
                 Toast.makeText(context, "CUSTOM_BROADCAST", Toast.LENGTH_SHORT).show();
                 break;
